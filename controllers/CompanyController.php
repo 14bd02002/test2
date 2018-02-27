@@ -16,12 +16,21 @@ use yii\data\Pagination;
  * @author Dias
  */
 class CompanyController extends AppController{
+    
+    
+
+    /**
+     * @inheritdoc
+     */
+    
 
     public function actionIndex(){
         $query = Company::find();
         $pagination = new Pagination([
-            'defaultPageSize' => 5,
+            'defaultPageSize' => 2,
             'totalCount' => $query->count(),
+            'pageSizeParam' => false,
+            'forcePageParam' => false,
         ]);
         $companies = $query->orderBy('CompanyName')
             ->offset($pagination->offset)
@@ -33,5 +42,12 @@ class CompanyController extends AppController{
         ]); 
 
     }
+    public function actionView(){
+        
+        $CompanyID = \Yii::$app->request->get('CompanyID');
+        $company = Company::findOne($CompanyID);
+        if(empty($company)) throw new \yii\web\HttpException(404, 'Not Found');
+        return $this->render('view', compact('company'));
+    }   
     
 }

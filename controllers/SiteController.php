@@ -15,6 +15,7 @@ use app\models\Category;
 
 
 
+
 class SiteController extends Controller
 {
 
@@ -148,8 +149,7 @@ class SiteController extends Controller
     {
         $countries2 = Country::find()->where(['like', 'name', 'braz'])->all();
 
-                return $this->render('about', [
-            'countries2' => $countries2,            
+                return $this->render('about', ['countries2' => $countries2,   
         ]); 
 
     }
