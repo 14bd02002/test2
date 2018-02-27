@@ -20,7 +20,7 @@ class CompanyController extends AppController{
     public function actionIndex(){
         $query = Company::find();
         $pagination = new Pagination([
-            'defaultPageSize' => 1,
+            'defaultPageSize' => 5,
             'totalCount' => $query->count(),
         ]);
         $companies = $query->orderBy('CompanyName')
