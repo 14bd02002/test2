@@ -10,7 +10,6 @@ use yii\widgets\LinkPager;
 
 
         <tr>
-            <th scope="col">#</th>
             <th scope="col">Наименование</th>
             <th scope="col">Бин</th>
             <th scope="col">Дата Образования</th>
@@ -20,7 +19,6 @@ use yii\widgets\LinkPager;
         <?php if (!empty($companies)): ?> 
             <?php foreach ($companies as $company): ?>
                 <tr>
-                    <th scope="row"><?= $company->CompanyID ?></th>
                     <td><a href = "<?= yii\helpers\Url::to(['company/view', 'CompanyID' => $company->CompanyID]) ?>"><?= $company->CompanyName ?></a></td>
                     <td><?= $company->BIN ?></td>
                     <td><?= $company->DateOfCreation ?></td>

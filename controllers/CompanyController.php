@@ -62,7 +62,7 @@ class CompanyController extends AppController{
     }
     public function actionSearch(){
         $q = Yii::$app->getRequest()->getQueryParam('q');
-        $query = Company::find()->where(['hide'=>0])->where(['like', 'CompanyName', $q]);
+        $query = Company::find()->where(['hide'=>0])->where(['like', 'concat(CompanyName,\' \', BIN)', $q]);
         $pagination = new Pagination([
             'defaultPageSize' => 2,
             'totalCount' => $query->count(),

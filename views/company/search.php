@@ -11,7 +11,6 @@ $this->title = "Поиск $q"
 
 
         <tr>
-            
             <th scope="col">Наименование</th>
             <th scope="col">Бин</th>
             <th scope="col">Дата Образования</th>
@@ -19,12 +18,8 @@ $this->title = "Поиск $q"
     </thead>
     <tbody>
         <?php if ($q == "") { ?>
-            <h2> Пустой запрос! </h2>
         <?php } else { ?>
-            <h2> Результаты поиска: <?= $q ?> </h2>
-
-            <?php if (!$companies) { ?>
-               
+            <?php if (!$companies) { ?>               
             <?php } else { ?>
                 <?php foreach ($companies as $company) ?>
                 <tr>
@@ -33,7 +28,6 @@ $this->title = "Поиск $q"
                     <td><?= $company->DateOfCreation ?></td>
                 </tr>
             <?php } ?>
-
         <?php } ?>
     </tbody>
 </table>
