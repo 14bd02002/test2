@@ -67,16 +67,17 @@ $model = new SearchForm();
 
                 <div class="form_search">
                     <?php $form = ActiveForm::begin(); ?>
-                    <table>
-                        <tr>
-                            <td>
-                                <?= $form->field($model, 'q')->textInput(['class ' => 'input'])->label('') ?>
-                            </td>
-                            <td>
-                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="margin-top:5px; margin-left:10px">Поиск</button>
-                            </td>
-                        </tr>
-                    </table>
+                    <div class="row" style="margin-left:0px">
+                        <div class="col-sm-8" style="margin:0px; padding:0px">
+                            <?= $form->field($model, 'q')->textInput(['class ' => 'input'])->label('') ?>
+                        </div>
+                        <div class="col-sm-4" style="margin:0px; padding:0px">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="margin-top:20px">Поиск</button>
+
+                        </div>
+
+                    </div>
+                    
                     <?php ActiveForm::end(); ?>
                 </div>
 <?=
