@@ -2,10 +2,7 @@
 
 use yii\widgets\LinkPager;
 ?>
-<form class="form-inline my-2 my-lg-0">
-    <input class="form-control mr-sm-2" type="search" placeholder="Введите наименование или БИН" aria-label="Search" style="width:50%">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
-</form>
+
 <table class="table table-striped">
     <thead>
 
